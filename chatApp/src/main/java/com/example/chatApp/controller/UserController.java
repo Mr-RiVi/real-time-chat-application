@@ -15,6 +15,7 @@ public class UserController {
         // Store the username in the WebSocket session attributes, so it can be retrieved later,
         // particularly in the WebsocketEventListener class when handling disconnection events.
         messageHeaderAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+        System.out.println("User joined:"+chatMessage.getSender());
 
         // Return the ChatMessage object, which will be broadcast to all subscribers of "/topic/public"
         // because we used the '@SendTo("/topic/public")' annotation above this method
